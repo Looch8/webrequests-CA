@@ -11,6 +11,10 @@ function getRandomPokemon() {
 		.then((data) => {
 			console.log("Data is: " + JSON.stringify(data, null, 4));
 
+			console.log("Data retrieved for: " + data.name);
+
+			let pokemonImage = document.getElementById("pokemonImage");
+			pokemonImage.src = data.sprites.front_default;
 			return data;
 		})
 		.catch((error) => {
